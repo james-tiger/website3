@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .login-container {
+    width: 300px;
+    padding: 16px;
+    background-color: #fff;
+    margin: 100px auto;
+    box-shadow: 0px 0px 10px 0px grey;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px; /* Adjusted margin for better spacing */
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 16px; /* Adjusted margin for better spacing */
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #toggle-form-text {
+    text-align: center; /* Center the text */
+    margin-top: 16px; /* Adjusted margin for better spacing */
+    color: #555;
+  }
+  
+  #toggle-form-link {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  #toggle-form-link:hover {
+    text-decoration: underline;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .login-container {
+    width: 300px;
+    padding: 16px;
+    background-color: #fff;
+    margin: 100px auto;
+    box-shadow: 0px 0px 10px 0px grey;
+    text-align: center; /* Center the content */
+  }
+  
+  .logo {
+    width: 200px; /* Set the desired width */
+    height: auto;
+    margin-bottom: 20px; /* Add some space below the image */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  /* ... rest of your styles ... */
+  
