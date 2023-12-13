@@ -1,15 +1,67 @@
-<div class="pl">
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__dot"></div>
-	<div class="pl__text">Loading…</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Simple Website</title>
+    <!-- Add your button styles here -->
+    <style>
+        .pl {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .pl__dot {
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            margin: 5px;
+        }
+
+        .pl__text {
+            margin-top: 10px;
+        }
+
+        /* Add your button styles here */
+        .custom-button {
+            /* Add your button styles here */
+            /* ... */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pl">
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__dot"></div>
+        <div class="pl__text">Loading…</div>
+    </div>
+
+    <!-- Add your button here -->
+    <button onclick="redirectToAnotherWebsite()" class="custom-button">
+        See more
+    </button>
+
+    <script>
+        function redirectToAnotherWebsite() {
+            // Change the URL to the desired website
+            window.location.href = 'https://www.example.com';
+        }
+    </script>
+
+</body>
+</html>
