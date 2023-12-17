@@ -1,7 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video Upload Form</title>
+
+  <!-- Add some basic styles for better presentation -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, button {
+      margin-top: 5px;
+    }
+
+    #videoContainer, #imageContainer {
+      margin-top: 20px;
+    }
+
+    video, img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <form id="videoUploadForm" enctype="multipart/form-data">
@@ -20,43 +55,46 @@
   <div id="videoContainer"></div>
   <div id="imageContainer"></div>
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-    $('#videoUploadForm').on('submit', function(e) {
-      e.preventDefault();
+    $(document).ready(function() {
+      $('#videoUploadForm').on('submit', function(e) {
+        e.preventDefault();
 
-      var formData = new FormData(this);
-      var url = '/uploadMedia';
+        var formData = new FormData(this);
+        var url = '/uploadMedia';
 
-      // Extract the media name
-      var mediaName = $('#mediaName').val();
+        // Extract the media name
+        var mediaName = $('#mediaName').val();
 
-      // Append the media name to the form data
-      formData.append('mediaName', mediaName);
+        // Append the media name to the form data
+        formData.append('mediaName', mediaName);
 
-      $.ajax({
-        type: 'POST',
-        url: url,
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(data) {
-          if (data.success) {
-            console.log('Media uploaded successfully');
+        $.ajax({
+          type: 'POST',
+          url: url,
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(data) {
+            if (data.success) {
+              console.log('Media uploaded successfully');
 
-            // Display the video on the page
-            var videoElement = '<video src="' + data.videoPath + '" controls></video>';
-            $('#videoContainer').html(videoElement);
+              // Display the video on the page
+              var videoElement = '<video src="' + data.videoPath + '" controls></video>';
+              $('#videoContainer').html(videoElement);
 
-            // Display the image on the page
-            var imageElement = '<img src="' + data.imagePath + '" alt="Image uploaded">';
-            $('#imageContainer').html(imageElement);
-          } else {
-            console.error('Failed to upload media');
+              // Display the image on the page
+              var imageElement = '<img src="' + data.imagePath + '" alt="Image uploaded">';
+              $('#imageContainer').html(imageElement);
+            } else {
+              console.error('Failed to upload media');
+            }
+          },
+          error: function(error) {
+            console.error('Error uploading media:', error);
           }
-        },
-        error: function(error) {
-          console.error('Error uploading media:', error);
-        }
+        });
       });
     });
   </script>
